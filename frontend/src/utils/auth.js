@@ -1,11 +1,11 @@
 import { useAuthStore } from '../store/auth'
 import axios from './axios'
-import jwt_decode from 'jwt-decode'
+import { jwtDecode } from "jwt-decode"
 import Cookie from 'js-cookie'
 
 export const login = async (email, password) => {
     try {
-        const {data, status} = await axios.post("user/token/", {
+        const { data, status } = await axios.post("user/token/", {
             email,
             password
         })
@@ -21,7 +21,7 @@ export const login = async (email, password) => {
         return {
             data: null,
             error: error.response.data?.detail || 'Birşeyler ters gitti'
-        }
+        };
     }
 }
 
