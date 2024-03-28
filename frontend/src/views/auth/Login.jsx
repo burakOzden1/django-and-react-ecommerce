@@ -62,6 +62,8 @@ function Login() {
             <br/>
             <br/>
             <button type='submit'>Giriş Yap</button>
+            <hr />
+            <Link to={'/forgot-password'}>Parolamı Unuttum</Link>
         </form>
     </div>
   )
