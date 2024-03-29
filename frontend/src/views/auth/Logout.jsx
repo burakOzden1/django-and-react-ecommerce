@@ -11,6 +11,8 @@ function Logout() {
     <div>
         <h1>Çıkış Yap</h1>
         <Link to={'/register'}>Kayıt Ol</Link>
+        <br/>
+        <br/>
         <Link to={'/login'}>Giriş Yap</Link>
     </div>
   )

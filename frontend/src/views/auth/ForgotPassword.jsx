@@ -1,13 +1,17 @@
 import { useState } from 'react'
 import apiInstance from '../../utils/axios'
+import { useNavigate } from 'react-router-dom'
 
 function ForgotPassword() {
     const [email, setEmail] = useState("")
 
-    const handleSubmit = () => {
+    const navigate = useNavigate()
+
+    const handleSubmit = async () => {
         try {
-            apiInstance.get(`user/password-reset/${email}/`).then((res) => {
-                console.log(res.data);
+            await apiInstance.get(`user/password-reset/${email}/`).then((res) => {
+                alert("Mail adresinize bir e-posta gönderildi.")
+                navigate("/create-new-password")
             })
         } catch (error) {
             console.log(error);
@@ -19,7 +23,7 @@ function ForgotPassword() {
             <h1>Şifremi Unuttum</h1>
             <input 
                 onChange={(e) => setEmail(e.target.value)} 
-                type='text' 
+                type='email' 
                 placeholder='Mail adresinizi giriniz...' 
                 name='' 
                 id='' 

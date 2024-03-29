@@ -10,7 +10,7 @@ function Dashboard() {
 
     return (
         <>
-            {isLoggedIn() 
+            {isLoggedIn
                 ? <div>
                     <h1>Panel</h1>
                     <Link to={`/logout`}>Çıkış Yap</Link>
@@ -18,8 +18,9 @@ function Dashboard() {
                 : <div>
                     <h1>Ana Sayfa</h1>
                     <Link to={'/register'}>Kayıt Ol</Link>
+                    <br/>
+                    <br/>
                     <Link to={'/login'}>Giriş Yap</Link>
-                    <Link to={`/logout`}>Çıkış Yap</Link>
                 </div>
             }
         </>
