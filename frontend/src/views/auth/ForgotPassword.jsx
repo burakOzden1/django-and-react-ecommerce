@@ -14,7 +14,7 @@ function ForgotPassword() {
                 navigate("/create-new-password")
             })
         } catch (error) {
-            console.log(error);
+            alert("Email does not exists")
         }
     }
 
